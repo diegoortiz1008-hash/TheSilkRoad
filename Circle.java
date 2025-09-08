@@ -21,9 +21,9 @@ public class Circle{
 
     public Circle(){
         diameter = 30;
-        xPosition = 20;
-        yPosition = 15;
-        color = "blue";
+        xPosition = 15;
+        yPosition = 55;
+        color = "black";
         isVisible = false;
     }
 
@@ -164,7 +164,26 @@ public class Circle{
         color = newColor;
         draw();
     }
+    
+    public int getXPosition(){
+        return this.xPosition;
+    }
+    
+    public int getYPosition(){
+        return this.yPosition;
+    }
 
+    public void changePositionX(int x){
+        erase(); 
+        xPosition = x;
+        draw();
+    }
+    
+    public void changePositionY(int y){
+        erase(); 
+        yPosition = y;
+        draw();
+    }
 
 
 }

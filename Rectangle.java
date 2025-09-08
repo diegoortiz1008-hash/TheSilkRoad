@@ -24,11 +24,11 @@ public class Rectangle{
      * Create a new rectangle at default position with default color.
      */
     public Rectangle(){
-        height = 30;
+        height = 40;
         width = 40;
-        xPosition = 70;
-        yPosition = 15;
-        color = "magenta";
+        xPosition = 10;
+        yPosition = 10;
+        color = "black";
         isVisible = false;
     }
     
@@ -181,6 +181,26 @@ public class Rectangle{
             Canvas canvas = Canvas.getCanvas();
             canvas.erase(this);
         }
+    }
+    
+    public int getXPosition(){
+        return this.xPosition;
+    }
+    
+    public int getYPosition(){
+        return this.yPosition;
+    }
+    
+    public void changePositionX(int x){
+        erase(); 
+        xPosition = x;
+        draw();
+    }
+    
+    public void changePositionY(int y){
+        erase(); 
+        yPosition = y;
+        draw();
     }
 }
 
