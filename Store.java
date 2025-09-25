@@ -12,14 +12,21 @@ public class Store
     private String color;
     private int xPosition;
     private int yPosition;
+    private int initialTenges;
+    private int position;
+    private int originalTenges;
+    private int numEmptied;
     
-    public Store(){
+    
+    public Store(int location, int tengesX){
         shapeStore = new Rectangle();
         tenges = 0;
-        color = "black";
+        color = "red";
         xPosition = 10;
         yPosition = 10;
-        
+        position = location;
+        originalTenges = tengesX;
+        tenges = tengesX;
     }
     public boolean isEmpty(){
         if(this.tenges <= 0){
@@ -48,7 +55,15 @@ public class Store
     }
     
     public void setTenges(int newTenges){
+        if(newTenges == 0){
+            this.changeColor("black");
+        }
         tenges = newTenges;
+    }
+    
+    public void restoreTenges(){
+        this.changeColor("red");
+        tenges = originalTenges;
     }
 
     public String getColor(){
@@ -69,4 +84,18 @@ public class Store
     public int getYPosition(){
         return this.yPosition;
     }
+    
+    public int getPosition(){
+        return this.position;
+    }
+    
+    public int getNumEmptied(){
+        return numEmptied;
+    }
+    
+    public void aumentNumEmptied(){
+        numEmptied += 1;
+    }
+    
+    
 }

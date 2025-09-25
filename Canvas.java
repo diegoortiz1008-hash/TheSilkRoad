@@ -19,21 +19,27 @@ public class Canvas{
     // is done on purpose to keep the interface and instance fields of the
     // shape objects in this project clean and simple for educational purposes.
 
-	private static Canvas canvasSingleton;
+    private static Canvas canvasSingleton;
 
-	/**
-	 * Factory method to get the canvas singleton object.
-	 */
-	public static Canvas getCanvas(){
-		if(canvasSingleton == null) {
-			canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
-										 Color.white);
-		}
-		canvasSingleton.setVisible(true);
-		return canvasSingleton;
-	}
+    /**
+     * Factory method to get the canvas singleton object.
+     */
+    
+    //generado con chatGPT
+    public static Canvas getCanvas(){
+        if(canvasSingleton == null) {
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            int width = screenSize.width;
+            int height = screenSize.height;
+    
+            canvasSingleton = new Canvas("BlueJ Shapes Demo", width, height, 
+                                         Color.white);
+        }
+        canvasSingleton.setVisible(true);
+        return canvasSingleton;
+    }
 
-	//  ----- instance part -----
+    //  ----- instance part -----
 
     private JFrame frame;
     private CanvasPane canvas;
@@ -93,10 +99,10 @@ public class Canvas{
      // objects. It is carefully designed to keep the visible shape interfaces
      // in this project clean and simple for educational purposes.
     public void draw(Object referenceObject, String color, Shape shape){
-    	objects.remove(referenceObject);   // just in case it was already there
-    	objects.add(referenceObject);      // add at the end
-    	shapes.put(referenceObject, new ShapeDescription(shape, color));
-    	redraw();
+        objects.remove(referenceObject);   // just in case it was already there
+        objects.add(referenceObject);      // add at the end
+        shapes.put(referenceObject, new ShapeDescription(shape, color));
+        redraw();
     }
  
     /**
@@ -104,9 +110,9 @@ public class Canvas{
      * @param  referenceObject  the shape object to be erased 
      */
     public void erase(Object referenceObject){
-    	objects.remove(referenceObject);   // just in case it was already there
-    	shapes.remove(referenceObject);
-    	redraw();
+        objects.remove(referenceObject);   // just in case it was already there
+        shapes.remove(referenceObject);
+        redraw();
     }
 
     /**
@@ -114,22 +120,22 @@ public class Canvas{
      * @param  newColour   the new colour for the foreground of the Canvas 
      */
     public void setForegroundColor(String colorString){
-		if(colorString.equals("red"))
-			graphic.setColor(Color.red);
-		else if(colorString.equals("black"))
-			graphic.setColor(Color.black);
-		else if(colorString.equals("blue"))
-			graphic.setColor(Color.blue);
-		else if(colorString.equals("yellow"))
-			graphic.setColor(Color.yellow);
-		else if(colorString.equals("green"))
-			graphic.setColor(Color.green);
-		else if(colorString.equals("magenta"))
-			graphic.setColor(Color.magenta);
-		else if(colorString.equals("white"))
-			graphic.setColor(Color.white);
-		else
-			graphic.setColor(Color.black);
+        if(colorString.equals("red"))
+            graphic.setColor(Color.red);
+        else if(colorString.equals("black"))
+            graphic.setColor(Color.black);
+        else if(colorString.equals("blue"))
+            graphic.setColor(Color.blue);
+        else if(colorString.equals("yellow"))
+            graphic.setColor(Color.yellow);
+        else if(colorString.equals("green"))
+            graphic.setColor(Color.green);
+        else if(colorString.equals("magenta"))
+            graphic.setColor(Color.magenta);
+        else if(colorString.equals("white"))
+            graphic.setColor(Color.white);
+        else
+            graphic.setColor(Color.black);
     }
 
     /**
@@ -146,12 +152,12 @@ public class Canvas{
         }
     }
 
-	/**
-	 * Redraw ell shapes currently on the Canvas.
-	 */
-	private void redraw(){
-		erase();
-		for(Iterator i=objects.iterator(); i.hasNext(); ) {
+    /**
+     * Redraw ell shapes currently on the Canvas.
+     */
+    private void redraw(){
+        erase();
+        for(Iterator i=objects.iterator(); i.hasNext(); ) {
                        shapes.get(i.next()).draw(graphic);
         }
         canvas.repaint();
@@ -167,6 +173,54 @@ public class Canvas{
         graphic.fill(new java.awt.Rectangle(0, 0, size.width, size.height));
         graphic.setColor(original);
     }
+    
+    
+    public int getUpLimit() {
+        int minY = Integer.MAX_VALUE;
+        for (ShapeDescription desc : shapes.values()) {
+            java.awt.Rectangle bounds = desc.shape.getBounds();
+            if (bounds.y < minY) {
+                minY = bounds.y;
+            }
+        }
+        return (minY == Integer.MAX_VALUE) ? -1 : minY;
+    }
+
+    public int getDownLimit() {
+        int maxY = Integer.MIN_VALUE;
+        for (ShapeDescription desc : shapes.values()) {
+            java.awt.Rectangle bounds = desc.shape.getBounds();
+            int bottom = bounds.y + bounds.height;
+            if (bottom > maxY) {
+                maxY = bottom;
+            }
+        }
+        return (maxY == Integer.MIN_VALUE) ? -1 : maxY;
+    }
+
+    public int getLeftLimit() {
+        int minX = Integer.MAX_VALUE;
+        for (ShapeDescription desc : shapes.values()) {
+            java.awt.Rectangle bounds = desc.shape.getBounds();
+            if (bounds.x < minX) {
+                minX = bounds.x;
+            }
+        }
+        return (minX == Integer.MAX_VALUE) ? -1 : minX;
+    }
+
+    public int getRightLimit() {
+        int maxX = Integer.MIN_VALUE;
+        for (ShapeDescription desc : shapes.values()) {
+            java.awt.Rectangle bounds = desc.shape.getBounds();
+            int right = bounds.x + bounds.width;
+            if (right > maxX) {
+                maxX = right;
+            }
+        }
+        return (maxX == Integer.MIN_VALUE) ? -1 : maxX;
+    }
+
 
 
     /************************************************************************
@@ -186,19 +240,21 @@ public class Canvas{
      * refresh the image drawn on it.
      */
     private class ShapeDescription{
-    	private Shape shape;
-    	private String colorString;
+        private Shape shape;
+        private String colorString;
 
-		public ShapeDescription(Shape shape, String color){
-    		this.shape = shape;
-    		colorString = color;
-    	}
+        public ShapeDescription(Shape shape, String color){
+            this.shape = shape;
+            colorString = color;
+        }
 
-		public void draw(Graphics2D graphic){
-			setForegroundColor(colorString);
-			graphic.draw(shape);
-			graphic.fill(shape);
-		}
+        public void draw(Graphics2D graphic){
+            setForegroundColor(colorString);
+            graphic.draw(shape);
+            graphic.fill(shape);
+        }
     }
+    
+    
 
 }

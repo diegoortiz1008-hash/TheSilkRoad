@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Robot here.
  * 
@@ -12,13 +12,20 @@ public class Robot
     private int xPosition;
     private int yPosition;
     private String color;
+    private int originalPosition;
+    private int originalTenges;
+    private int position;
+    private int profit;
+    private ArrayList<Integer> profitHistory;
     
-    public Robot(){
+    public Robot(int location){
         shapeRobot = new Circle();
         tenges = 0;
         xPosition = shapeRobot.getXPosition();
         yPosition = shapeRobot.getYPosition();
-        color = "black";
+        color = "blue";
+        position = location;
+        profit = 0;
     }
     
     public boolean NotAbleToMove(){
@@ -43,12 +50,45 @@ public class Robot
         shapeRobot.makeInvisible();
     }
     
+    
+    public int getPosition(){
+        return position;
+    }
+    
     public int getTenges(){
         return this.tenges;
     }
     
-    public void setTenges(int newTenges){
-        tenges += newTenges;
+    public void advance(int meters){
+        position += meters;
+    }
+    
+    public int getOriginalTenges(){
+        return originalTenges;
+    }
+    
+    public int getProfit(){
+        return profit;
+    }
+    
+    public void setProfit(int sum){
+        profit += sum;
+    }
+    
+    public void setTenges(int tengesX){
+        tenges += tengesX;
+    }
+    
+    public int getOriginalPosition(){
+        return this.originalPosition;
+    }
+    
+    public void restorePosition(){
+        position = originalPosition;
+    }
+    
+    public void changePosition(int newPosition){
+        this.position = newPosition;
     }
     
     public void changeColor(String color){
@@ -70,6 +110,11 @@ public class Robot
         return this.yPosition;
     }
     
+    public ArrayList<Integer> getProfitHistory(){
+        return this.profitHistory;
+    }
     
-    
+    public void addProfitToHistory(int profit){
+        profitHistory.add(profit);
+    }
 }
