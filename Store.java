@@ -20,6 +20,7 @@ public class Store
     
     public Store(int location, int tengesX){
         shapeStore = new Rectangle();
+        shapeStore.changePositionX(location);
         tenges = 0;
         color = "red";
         xPosition = 10;

@@ -20,6 +20,7 @@ public class Robot
     
     public Robot(int location){
         shapeRobot = new Circle();
+        shapeRobot.changePositionX(location);
         tenges = 0;
         xPosition = shapeRobot.getXPosition();
         yPosition = shapeRobot.getYPosition();

@@ -43,6 +43,7 @@ public class SilkRoad
         Store storeX = new Store(location,tenges);
         roadStore.add(storeX);
         numStore += 1;
+        storeX.makeVisible();
     }
     
     public void removeStore(int location){
@@ -141,6 +142,7 @@ public class SilkRoad
         Robot robotX = new Robot(location);
         roadRobot.add(robotX);
         numRobot += 1;
+        robotX.makeVisible();
     }
     
     public void moveRobot(int location, int meters){
