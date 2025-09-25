@@ -64,11 +64,11 @@ public class SilkRoad
     
     public void moveRobots() {
         for (Robot robot : roadRobot) {
-            if (!robot.NotAbleToMove()) continue;
         
             int bestMove = findBestMove(robot);
             if (bestMove != 0) {
                 moveRobot(robot.getPosition(), bestMove);
+                robot.makeVisible();
             }
         }
     }
@@ -102,7 +102,6 @@ public class SilkRoad
         ArrayList<int[]> robotProfitData = new ArrayList<>();
     
         for (Robot robot : roadRobot) {
-            if (robot.NotAbleToMove()) { 
                 int currentPosition = robot.getPosition();
                 ArrayList<Integer> history = robot.getProfitHistory(); 
             
@@ -117,7 +116,6 @@ public class SilkRoad
             
                 robotProfitData.add(robotData);
             }
-        }
         int[][] result = new int[robotProfitData.size()][];
         for (int i = 0; i < robotProfitData.size(); i++) {
             result[i] = robotProfitData.get(i);

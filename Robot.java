@@ -16,7 +16,7 @@ public class Robot
     private int originalTenges;
     private int position;
     private int profit;
-    private ArrayList<Integer> profitHistory;
+    private ArrayList<Integer> profitHistory = new ArrayList<>();
     
     public Robot(int location){
         shapeRobot = new Circle();
