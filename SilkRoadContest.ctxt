@@ -1,0 +1,28 @@
+#BlueJ class context
+comment0.target=SilkRoadContest
+comment0.text=\r\n\ SilkRoadContest\ -\ Resuelve\ el\ problema\ de\ optimizaci\u00F3n\ de\ la\ marat\u00F3n\r\n\ Calcula\ la\ m\u00E1xima\ utilidad\ que\ los\ robots\ pueden\ obtener\ cada\ d\u00EDa\r\n\ \r\n\ @author\ DOPO\ Project\r\n\ @version\ Ciclo\ 3\ -\ 2025-2\r\n
+comment1.params=days
+comment1.target=SilkRoadContest(int[][])
+comment1.text=\r\n\ Constructor\r\n\ @param\ days\ Array\ con\ informaci\u00F3n\ de\ cada\ d\u00EDa\r\n\ \ \ \ \ \ \ \ days[i][0]\ \=\ 1\ (robot)\ o\ 2\ (tienda)\r\n\ \ \ \ \ \ \ \ days[i][1]\ \=\ ubicaci\u00F3n\r\n\ \ \ \ \ \ \ \ days[i][2]\ \=\ tenges\ (solo\ para\ tiendas)\r\n
+comment2.params=
+comment2.target=int[]\ solve()
+comment2.text=\r\n\ Resuelve\ el\ problema\ de\ optimizaci\u00F3n\r\n\ Calcula\ la\ m\u00E1xima\ utilidad\ diaria\r\n\ @return\ Array\ con\ la\ m\u00E1xima\ utilidad\ de\ cada\ d\u00EDa\r\n
+comment3.params=robots\ stores
+comment3.target=int\ calculateMaxProfit(java.util.List,\ java.util.List)
+comment3.text=\r\n\ Calcula\ la\ m\u00E1xima\ utilidad\ posible\ dados\ robots\ y\ tiendas\r\n
+comment4.params=robots\ stores
+comment4.target=int[][]\ findOptimalMovements(java.util.List,\ java.util.List)
+comment4.text=\r\n\ Encuentra\ los\ movimientos\ \u00F3ptimos\ para\ maximizar\ la\ utilidad\r\n
+comment5.params=
+comment5.target=void\ simulate()
+comment5.text=\r\n\ Simula\ la\ soluci\u00F3n\ usando\ SilkRoad\r\n
+comment6.params=
+comment6.target=int[]\ getMaxProfits()
+comment6.text=\r\n\ Obtiene\ las\ utilidades\ m\u00E1ximas\ calculadas\r\n
+comment7.params=
+comment7.target=getSolutions()
+comment7.text=\r\n\ Obtiene\ los\ movimientos\ \u00F3ptimos\ por\ d\u00EDa\r\n
+comment8.params=
+comment8.target=boolean\ ok()
+comment8.text=\r\n\ Verifica\ si\ la\ soluci\u00F3n\ es\ v\u00E1lida\r\n
+numComments=9
