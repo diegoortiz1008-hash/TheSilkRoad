@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=SilkRoadContestTest
+comment0.text=\r\n\ Clase\ de\ prueba\ para\ SilkRoadContest\ usando\ JUnit\ Jupiter\r\n\ Prueba\ la\ resoluci\u00F3n\ del\ problema\ de\ la\ marat\u00F3n\ paso\ a\ paso\r\n\ \r\n\ @author\ Test\ Suite\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=void\ tearDown()
+comment2.params=
+comment2.target=void\ testSolveBasico()
+comment2.text=\r\n\ Test\ 1\:\ Verificar\ que\ solve()\ calcula\ correctamente\ las\ ganancias\ d\u00EDa\ por\ d\u00EDa\r\n
+comment3.params=
+comment3.target=void\ testSimulateRapido()
+comment3.text=\r\n\ Test\ 3\:\ Simular\ el\ juego\ sin\ velocidad\ lenta\ (r\u00E1pido)\r\n
+comment4.params=
+comment4.target=void\ testSimulateLento()
+comment4.text=\r\n\ Test\ 4\:\ Simular\ el\ juego\ con\ velocidad\ lenta\ (para\ visualizaci\u00F3n)\r\n
+numComments=5
