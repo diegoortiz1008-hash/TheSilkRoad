@@ -9,5 +9,4 @@ comment2.target=int[]\ solve(int[][])
 comment2.text=\r\n\ Calcula\ la\ ganancia\ acumulada\ d\u00EDa\ a\ d\u00EDa.\r\n\ Por\ cada\ d\u00EDa\ crea\ un\ SilkRoad\ con\ los\ eventos\ hasta\ ese\ d\u00EDa,\r\n\ ejecuta\ moveRobots()\ y\ registra\ la\ ganancia\ total.\r\n\ \r\n\ @param\ days\ Arreglo\ de\ eventos\ [tipo,\ posici\u00F3n,\ tenges]\r\n\ @return\ Arreglo\ con\ la\ ganancia\ acumulada\ en\ cada\ d\u00EDa\r\n
 comment3.params=days\ slow
 comment3.target=void\ simulate(int[][],\ boolean)
-comment3.text=\r\n\ Visualiza\ la\ simulaci\u00F3n\ d\u00EDa\ a\ d\u00EDa\ en\ el\ canvas.\r\n\ Crea\ un\ SilkRoad\ por\ cada\ d\u00EDa,\ ejecuta\ moveRobots()\ y\ lo\ muestra.\r\n\ \r\n\ @param\ days\ Arreglo\ de\ eventos\ [tipo,\ posici\u00F3n,\ tenges]\r\n\ @param\ slow\ Si\ es\ true,\ pausa\ 1\ segundo\ entre\ d\u00EDas.\ Si\ es\ false,\ sin\ pausa.\r\n
 numComments=4

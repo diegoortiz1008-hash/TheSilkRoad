@@ -179,21 +179,21 @@ public class SilkRoad
      * Usa estrategia greedy: mejor relación ganancia/distancia.
      */
     public void moveRobots() {
-    for (Robot robot : roadRobot) {
-        boolean sigueMoViendose = true;
-        
-        while (sigueMoViendose) {
+        for (Robot robot : roadRobot) {
+            boolean isBestMove = true;     
             int bestMove = findBestMove(robot);
-            if (bestMove != 0) {
+            for (Robot r : roadRobot) {
+                int newBestMove = Math.abs(findBestMove(r));
+                if (newBestMove != 0 && newBestMove < bestMove){
+                    isBestMove = false;
+                }
+            }
+            if (bestMove != 0 && isBestMove == true) {
                 moveRobot(robot.getPosition(), bestMove);
-                robot.makeVisible();
-            } else {
-                sigueMoViendose = false;  // No hay más movimientos rentables
             }
         }
     }
-    }
-
+    
     /**
      * Calcula el mejor movimiento para un robot (método privado).
      * @param robot Robot a evaluar
