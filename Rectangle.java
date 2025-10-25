@@ -26,9 +26,15 @@ public class Rectangle{
     public Rectangle(){
         height = 40;
         width = 40;
+<<<<<<< HEAD
         xPosition = 10;
         yPosition = 10;
         color = "black";
+=======
+        xPosition = 0;
+        yPosition = 0;
+        color = "red";
+>>>>>>> master
         isVisible = false;
     }
     

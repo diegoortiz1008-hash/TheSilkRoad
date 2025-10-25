@@ -25,10 +25,21 @@ comment19.params=
 comment19.target=int\ getYPosition()
 comment2.params=
 comment2.target=boolean\ NotAbleToMove()
+<<<<<<< HEAD
 comment20.params=
 comment20.target=java.util.ArrayList\ getProfitHistory()
 comment21.params=profit
 comment21.target=void\ addProfitToHistory(int)
+=======
+comment20.params=newXPosition
+comment20.target=void\ changePositionX(int)
+comment21.params=newYPosition
+comment21.target=void\ changePositionY(int)
+comment22.params=
+comment22.target=java.util.ArrayList\ getProfitHistory()
+comment23.params=profit
+comment23.target=void\ addProfitToHistory(int)
+>>>>>>> master
 comment3.params=x\ y
 comment3.target=void\ moveTo(int,\ int)
 comment4.params=
@@ -43,4 +54,8 @@ comment8.params=meters
 comment8.target=void\ advance(int)
 comment9.params=
 comment9.target=int\ getOriginalTenges()
+<<<<<<< HEAD
 numComments=22
+=======
+numComments=24
+>>>>>>> master

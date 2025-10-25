@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=SilkRoadContest
+comment0.text=\r\n\ SilkRoadContest\ -\ Resuelve\ el\ problema\ de\ optimizaci\u00F3n\ de\ la\ marat\u00F3n\r\n\ Calcula\ la\ m\u00E1xima\ utilidad\ que\ los\ robots\ pueden\ obtener\ cada\ d\u00EDa\r\n\ \r\n\ @author\ DOPO\ Project\r\n\ @version\ Ciclo\ 3\ -\ 2025-2\r\n
+comment1.params=days
+comment1.target=SilkRoadContest(int[][])
+comment1.text=\r\n\ Constructor\ que\ recibe\ los\ d\u00EDas\ a\ simular.\r\n\ @param\ days\ Arreglo\ de\ eventos\ [tipo,\ posici\u00F3n,\ tenges]\r\n
+comment2.params=days
+comment2.target=int[]\ solve(int[][])
+comment2.text=\r\n\ Calcula\ la\ ganancia\ acumulada\ d\u00EDa\ a\ d\u00EDa.\r\n\ Por\ cada\ d\u00EDa\ crea\ un\ SilkRoad\ con\ los\ eventos\ hasta\ ese\ d\u00EDa,\r\n\ ejecuta\ moveRobots()\ y\ registra\ la\ ganancia\ total.\r\n\ \r\n\ @param\ days\ Arreglo\ de\ eventos\ [tipo,\ posici\u00F3n,\ tenges]\r\n\ @return\ Arreglo\ con\ la\ ganancia\ acumulada\ en\ cada\ d\u00EDa\r\n
+comment3.params=days\ slow
+comment3.target=void\ simulate(int[][],\ boolean)
+numComments=4

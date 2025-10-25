@@ -21,9 +21,15 @@ public class Circle{
 
     public Circle(){
         diameter = 30;
+<<<<<<< HEAD
         xPosition = 15;
         yPosition = 15;
         color = "black";
+=======
+        xPosition = 5;
+        yPosition = 5;
+        color = "blue";
+>>>>>>> master
         isVisible = false;
     }
 
@@ -185,5 +191,8 @@ public class Circle{
         draw();
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }

@@ -16,15 +16,28 @@ public class Robot
     private int originalTenges;
     private int position;
     private int profit;
+<<<<<<< HEAD
     private ArrayList<Integer> profitHistory;
     
     public Robot(int location){
         shapeRobot = new Circle();
+=======
+    private ArrayList<Integer> profitHistory = new ArrayList<>();
+    private ArrayList<Integer> movementHistory = new ArrayList<>();
+    
+    public Robot(int location){
+        shapeRobot = new Circle();
+        shapeRobot.changePositionX(location);
+>>>>>>> master
         tenges = 0;
         xPosition = shapeRobot.getXPosition();
         yPosition = shapeRobot.getYPosition();
         color = "blue";
         position = location;
+<<<<<<< HEAD
+=======
+        originalPosition = location;
+>>>>>>> master
         profit = 0;
     }
     
@@ -37,6 +50,10 @@ public class Robot
         }
     }
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     public void moveTo(int x, int y){
         shapeRobot.changePositionX(x);
         shapeRobot.changePositionY(y);
@@ -61,6 +78,10 @@ public class Robot
     
     public void advance(int meters){
         position += meters;
+<<<<<<< HEAD
+=======
+        tenges -= Math.abs(meters);
+>>>>>>> master
     }
     
     public int getOriginalTenges(){
@@ -110,6 +131,19 @@ public class Robot
         return this.yPosition;
     }
     
+<<<<<<< HEAD
+=======
+    public void changePositionX(int newXPosition){
+        shapeRobot.changePositionX(newXPosition);
+        this.xPosition = newXPosition;
+    }
+    
+    public void changePositionY(int newYPosition){
+        shapeRobot.changePositionY(newYPosition);
+        this.yPosition = newYPosition;
+    }
+    
+>>>>>>> master
     public ArrayList<Integer> getProfitHistory(){
         return this.profitHistory;
     }

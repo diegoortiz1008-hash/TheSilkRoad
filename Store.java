@@ -20,14 +20,26 @@ public class Store
     
     public Store(int location, int tengesX){
         shapeStore = new Rectangle();
+<<<<<<< HEAD
         tenges = 0;
         color = "red";
         xPosition = 10;
         yPosition = 10;
+=======
+        shapeStore.changePositionX(location);
+        tenges = tengesX;
+        color = "red";
+        xPosition = shapeStore.getXPosition();
+        yPosition = shapeStore.getYPosition();
+>>>>>>> master
         position = location;
         originalTenges = tengesX;
         tenges = tengesX;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     public boolean isEmpty(){
         if(this.tenges <= 0){
             return true;
@@ -54,11 +66,17 @@ public class Store
         return this.tenges;
     }
     
+<<<<<<< HEAD
     public void setTenges(int newTenges){
         if(newTenges == 0){
             this.changeColor("black");
         }
         tenges = newTenges;
+=======
+    public void empty(){
+        tenges = 0;
+        this.changeColor("black");
+>>>>>>> master
     }
     
     public void restoreTenges(){
@@ -85,6 +103,19 @@ public class Store
         return this.yPosition;
     }
     
+<<<<<<< HEAD
+=======
+    public void changePositionX(int newXPosition){
+        shapeStore.changePositionX(newXPosition);
+        this.xPosition = newXPosition;
+    }
+    
+    public void changePositionY(int newYPosition){
+        shapeStore.changePositionY(newYPosition);
+        this.yPosition = newYPosition;
+    }
+    
+>>>>>>> master
     public int getPosition(){
         return this.position;
     }
@@ -93,7 +124,11 @@ public class Store
         return numEmptied;
     }
     
+<<<<<<< HEAD
     public void aumentNumEmptied(){
+=======
+    public void increaseNumEmptied(){
+>>>>>>> master
         numEmptied += 1;
     }
     

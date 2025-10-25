@@ -176,6 +176,7 @@ public class Canvas{
     
     
     public int getUpLimit() {
+<<<<<<< HEAD
         int minY = Integer.MAX_VALUE;
         for (ShapeDescription desc : shapes.values()) {
             java.awt.Rectangle bounds = desc.shape.getBounds();
@@ -219,6 +220,56 @@ public class Canvas{
             }
         }
         return (maxX == Integer.MIN_VALUE) ? -1 : maxX;
+=======
+        return 0;
+    }
+
+    public int getDownLimit() {
+        if (!frame.isVisible()) {
+            frame.pack();
+            frame.setVisible(true);
+        }
+        int height = canvas.getHeight();
+        if (height <= 0) {
+            frame.validate();
+            height = canvas.getHeight();
+        }
+        if (height <= 0) {
+            height = frame.getHeight();
+        }
+        return Math.max(height, 0);
+    }
+
+
+    public int getLeftLimit() {
+        return 0;
+    }
+
+    public int getRightLimit() {
+        // Asegura que el frame está correctamente empaquetado y visible
+        if (!frame.isVisible()) {
+            frame.pack();
+            frame.setVisible(true);
+        }
+    
+        // Obtiene el ancho actual del canvas
+        int width = canvas.getWidth();
+    
+        // Si aún no tiene tamaño válido (por ejemplo, antes de mostrarse en pantalla)
+        if (width <= 0) {
+            // Forzamos actualización de layout para obtener dimensiones reales
+            frame.validate();
+            width = canvas.getWidth();
+        }
+    
+        // Si aún así no se ha actualizado, devolvemos el ancho del frame como respaldo
+        if (width <= 0) {
+            width = frame.getWidth();
+        }
+    
+        // Siempre devolvemos un valor positivo
+        return Math.max(width, 0);
+>>>>>>> master
     }
 
 
